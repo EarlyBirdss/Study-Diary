@@ -10,7 +10,7 @@
 	<div class="G-lightbox-popup">
 		<div class="lightbox-pic-view">
 			<span class="lightbox-btn lightbox-prev-btn"></span>
-			<img class="lightbox-img" src="images/1-1.jpg" alt="title">
+			<img class="lightbox-img" src="images/1-1.jpg" alt="title" width="100%">
 			<span class="lightbox-btn lightbox-next-btn"></span>
 		</div>
 		<div class="lightbox-pic-caption">
@@ -18,8 +18,14 @@
 				<p class="lightbox-pic-desc">图片标题</p>
 				<span class="lightbox-of-index">当前索引：1 of 4</span>
 			</div>
-			<span class="lightbox-close-btn">X</span>
+			<span class="lightbox-close-btn"></span>
 		</div>
 	</div>
+
+	<script type="text/javascript">
+		$(function(){
+			var lightbox = LightBox();
+		});
+	</script>
 </body>
 </html>
