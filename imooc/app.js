@@ -1,10 +1,18 @@
 //引入模块
 var express = require("express");
 var path = require("path");
+var mongoose = require("mongoose");
+var _ = require("underscore");
+//加载movie模型
+var Movie = require("./models/movie");
 //设置端口
 var port = process.env.PORT || 8080;
 //启动
 var app = express();
+
+mongoose.connect("mongodb://localhost/imooc");
+
+
 //设置视图地址
 app.set("views", "./views/pages");
 //设置模板引擎
@@ -19,73 +27,62 @@ app.listen(port);
 console.log("imooc started on port" + port);
 
 //设置路由
+//首页
 app.get("/", function(req, res) {
-	res.render("index", {
-		title: "imooc 首页首页首页",
-		movies: [{
-			title: "机械战警",
-			_id: 1,
-			poster: "1.png"
-		}, {
-			title: "机械战警",
-			_id: 2,
-			poster: "1.png"
-		}, {
-			title: "机械战警",
-			_id: 3,
-			poster: "1.png"
-		}, {
-			title: "机械战警",
-			_id: 4,
-			poster: "1.png"
-		}, {
-			title: "机械战警",
-			_id: 5,
-			poster: "1.png"
-		}, {
-			title: "机械战警",
-			_id: 6,
-			poster: "1.png"
-		}, {
-			title: "机械战警",
-			_id: 7,
-			poster: "1.png"
-		}, {
-			title: "机械战警",
-			_id: 8,
-			poster: "1.png"
-		}]
+
+	Movie.fetch(function(err, movies) {
+
+		if (err) {
+			console.log(err);
+		}
+
+		res.render("index", {
+			title: "imooc 首页",
+			movies: movies
+		});
 	});
+
 });
+
+//列表页
 app.get("/admin/list", function(req, res) {
-	res.render("index", {
-		title: "imooc 列表页",
-		movies: [{
-			_id: 1,
-			title: "机械战警",
-			doctor: "导演",
-			country: "英国",
-			year: 2014
-		}]
+
+	var id = req.params.id;
+	Movie.find(function(err, movie) {
+
+		if (err) {
+			console.log(err);
+		}
+
+		res.render("list", {
+			title: "imooc 列表",
+			movies: movies
+		});
+
 	});
+
 });
 app.get("/movie/:id", function(req, res) {
-	res.render("index", {
-		title: "imooc 详情页",
-		movie: {
-			doctor: "导演",
-			country: "美国",
-			title: "机械战警",
-			year: 2014,
-			poster: "1.png",
-			language: "英语",
-			flash: "flash",
-			summary: "简介"
+
+
+	var id = req.params.id;
+	Movie.findById(id, function(err, movie) {
+
+		if (err) {
+			console.log(err);
 		}
+
+		res.render("list", {
+			title: "imooc " + movie.title,
+			movies: movie
+		});
+
 	});
+
 });
+
 app.get("/admin/movie", function(req, res) {
-	res.render("index", {
+	res.render("admin", {
 		title: "imooc 后台录入页",
 		movie: {
 			title: "",
@@ -98,4 +95,54 @@ app.get("/admin/movie", function(req, res) {
 			language: ""
 		}
 	});
+});
+
+app.get("/admin/update/:id", function(req, res) {
+	var id = req.params.id;
+
+	if (id) {
+		Movie.findById(id, function(err, movie) {
+			res.render("admin", {
+				title: "imooc 后台更新",
+				movie: movie
+			});
+		});
+	}
+})
+
+app.post("/admin/movie/new", function(req, res) {
+
+	var id = req.body.movie._id;
+	var movieObj = req.body.movie;
+	var _movie;
+
+	if (id !== "undefined") {
+		Movie.findById(id, function(err, movie) {
+			if (err) {
+				console.log(err);
+			}
+
+			_movie = _.extend(movie, movieObj);
+		});
+	} else {
+		_movie = new Movie({
+			doctor: movieObj.doctor,
+			title: movieObj.title,
+			country: movieObj.country,
+			language: movieObj.language,
+			year: movieOjb.year,
+			poster: movieObj.poster,
+			summary: movieObj.summary,
+			flash: movieObj.flash
+		});
+	}
+
+	_movie.save(function(err, movie) {
+		if (err) {
+			console.log(err);
+		}
+
+		res.redirect("/movie/" + movie._id);
+	});
+
 });
