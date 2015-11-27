@@ -2,6 +2,7 @@
 var express = require("express");
 var path = require("path");
 var mongoose = require("mongoose");
+//var mongoose = db.createConnection("localhost", "imooc");
 var _ = require("underscore");
 //加载movie模型
 var Movie = require("./models/movie");
@@ -10,7 +11,7 @@ var port = process.env.PORT || 8080;
 //启动
 var app = express();
 
-mongoose.connect("mongodb://localhost/imooc");
+mongoose.connect('mongodb://localhost/test');
 
 
 //设置视图地址
@@ -48,7 +49,7 @@ app.get("/", function(req, res) {
 app.get("/admin/list", function(req, res) {
 
 	var id = req.params.id;
-	Movie.find(function(err, movie) {
+	Movie.fetch(function(err, movie) {
 
 		if (err) {
 			console.log(err);
@@ -62,6 +63,7 @@ app.get("/admin/list", function(req, res) {
 	});
 
 });
+
 app.get("/movie/:id", function(req, res) {
 
 
@@ -72,7 +74,7 @@ app.get("/movie/:id", function(req, res) {
 			console.log(err);
 		}
 
-		res.render("list", {
+		res.render("detail", {
 			title: "imooc " + movie.title,
 			movies: movie
 		});

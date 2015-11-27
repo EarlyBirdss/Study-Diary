@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<title>$scope DOME</title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+	<div ng-controller="EventController">
+		root scope
+		<br>
+		<tt>MyEvent</tt>count: {{count}};
+		<ul>
+			<li ng-repeat="i in [1]" ng-controller="EventController">
+				<button ng-click="$emit("MyEvent")">$emit("MyEvent")</button>
+				<button ng-click="$broadcast("MyEvent")">$broadcast("MyEvent")</button>
+				<br>
+				middle scope
+				<tt>MyEvent</tt>count: {{count}};
+				<ul>
+					<li ng-repeat="item in [1,2]" ng-controller="EventController">
+						leaf scope
+						<tt>MyEvent</tt>count: {{count}};
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+
+	<script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
+	<script src="./scripts/imooc-scope-event.js"></script>
+</body>
+</html>

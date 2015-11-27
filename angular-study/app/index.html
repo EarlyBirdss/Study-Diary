@@ -1,0 +1,30 @@
+<html ng-app>
+<head>
+<meta charset="utf-8">
+</head>
+<body ng-controller="LanguageListCtrl">
+	<div class="container-fluid">
+	  <div class="row-fluid">
+	    <div class="span2">
+	      <!--Sidebar content-->
+
+	      Search: <input ng-model="query">
+
+	    </div>
+	    <div class="span10">
+	      <!--Body content-->
+
+	      <ul class="phones">
+	        <li ng-repeat="phone in phones | filter:query">
+	          {{phone.name}}
+	        <p>{{phone.snippet}}</p>
+	        </li>
+	      </ul>
+
+	       </div>
+	  </div>
+	</div>
+  <script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
+  <script src="./scripts/controller.js"></script>
+</body>
+</html>

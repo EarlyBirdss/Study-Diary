@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="userInfoModule">
+<head>
+<meta charset="utf-8">
+	<title>angular form</title>
+	<link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<div class="panel-title">双向绑定</div>
+	</div>
+	<div class="panel-body">
+		<div class="row">
+			<div class="col-md-12">
+				<form action="" class="form-horizontal" role="form" ng-controller="UserInfoCtrl">
+					<div class="form-group">
+						<label class="col-md-2 control-label">
+							邮箱：
+						</label>
+						<div class="col-md-10">
+							<input type="email" class="form-control" placeholder="推荐使用126邮箱" ng-model="userInfo.email"></input>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-2 control-label">
+							密码：
+						</label>
+						<div class="col-md-10">
+							<input type="password" class="form-control" placeholder="由下划线、数字、字母组成的2-16个字符" ng-model="userInfo.password"></input>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-offset-2 col-md-10">
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" ng-model="userInfo.autoLogin">自动登录
+								</label>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
+<script src="./scripts/imooc-form.js"></script>
+</body>
+</html>

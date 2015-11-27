@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<title>$scope DOME</title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+	<div ng-controller="GreetCtrl">
+	hello {{name}}!
+	</div>
+	<div ng-controller="ListCtrl">
+		<ol>
+			<li ng-repeat="name in names">{{name}} from {{department}}</li>
+		</ol>
+	</div>
+	<script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
+	<script src="./scripts/imooc-scope.js"></script>
+</body>
+</html>
