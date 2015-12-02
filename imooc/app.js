@@ -4,6 +4,7 @@ var path = require("path");
 var mongoose = require("mongoose");
 //var mongoose = db.createConnection("localhost", "imooc");
 var _ = require("underscore");
+var bodyParser = require("body-parser");
 //加载movie模型
 var Movie = require("./models/movie");
 //设置端口
@@ -22,6 +23,9 @@ app.set("view engine", "jade");
 //app.use(express.bodyParser());
 //更改样式目录
 app.use(express.static(path.join(__dirname, "bower_components")));
+app.use(bodyParser.urlencoded({
+	extended: true
+}));
 //监听端口
 app.listen(port);
 
@@ -132,7 +136,7 @@ app.post("/admin/movie/new", function(req, res) {
 			title: movieObj.title,
 			country: movieObj.country,
 			language: movieObj.language,
-			year: movieOjb.year,
+			year: movieObj.year,
 			poster: movieObj.poster,
 			summary: movieObj.summary,
 			flash: movieObj.flash

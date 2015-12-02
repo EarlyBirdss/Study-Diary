@@ -1,0 +1,1 @@
+mongod --dbpath E:\Study-Diary\imooc\imoocData
