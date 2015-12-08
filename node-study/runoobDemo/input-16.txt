@@ -1,0 +1,1 @@
+我是写入内容，测试fs.writeFile

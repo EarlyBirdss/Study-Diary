@@ -1,20 +1,20 @@
-##2015-1-23 周一
+##2015-11-23 周一
 
 * 【书籍】JavaScript启示录
 
-##2015-1-23 周二
+##2015-11-24 周二
 
 * 【书籍】JavaScript启示录
 * 【书籍】JavaScript设计模式与开发实践（好书好书好书！太长见识咯！）
 * 【慕课】nodeJS + mongoose建站（遇到问题暂时卡住了）
 
-##2015-1-23 周三
+##2015-11-25 周三
 
 * 【书籍】JavaScript设计模式与开发实践
 * 【书籍】Effective JavaScript
 * 【慕课】angularJS实战
 
-##2015-1-23 周四
+##2015-11-26 周四
 
 * 【书籍】JavaScript设计模式与开发实践
 * 【书籍】Effective JavaScript
@@ -22,16 +22,16 @@
 * 【菜鸟教程】[angularJS菜鸟教程](http://www.runoob.com/angularjs/angularjs-tutorial.html)
 * 【OurJS】[mongoose教程](http://ourjs.com/detail/53ad24edb984bb4659000013)
 	
-##2015-1-23 周五
+##2015-11-27 周五
 
 * 【书籍】JavaScript设计模式与开发实践
 * 【书籍】Effective JavaScript
 
-##2015-1-23 周六
+##2015-11-28 周六
 
 * 空
 
-##2015-1-23 周日
+##2015-11-29 周日
 
 * 【书籍】Effective JavaScript
 
