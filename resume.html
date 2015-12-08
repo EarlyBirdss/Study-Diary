@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>PDF简历</title>
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+</head>
+<style>
+    body{
+        width:595px;
+        height:842px;
+        font-size:14px;
+        font-family: "微软雅黑";
+        margin:0 auto;/*
+        -webkit-transform: rotate(90deg);*/
+    }
+    .sideBar{
+        width:250px;
+        height:100%;
+        background:rgba(41, 180, 240,.5);
+        float: left;
+        color:#FFF;
+        padding:20px 10px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .main{
+        width:345px;
+        height:100%;
+        float: right;
+        padding:20px 10px 20px 30px;
+        border-left:3px solid #FFF:
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        color:rgba(0,0,0,.7);
+        background:#f3f3f3;
+    }
+    .sideBar .photo_intro{
+
+    }
+    .photo_intro .photo{
+        width:100px;
+        height:100px;
+        background: url("images/PDFphoto.png")  center center no-repeat;
+        background-size: cover;
+        border-radius: 50%;
+        border:4px solid #FFF;
+        margin-left:65px;
+    }
+    .photo_intro .intro{
+        text-align: center;
+        margin:20px 0;
+    }
+    .intro h3{
+        font-size:24px;
+        font-weight:bold;
+        margin:5px 0;
+    }
+    .intro h6{
+        font-size:12px;
+        color:rgba(0,0,0,.8);
+        margin:5px 0;
+    }
+    .intro h4{
+        font-size:16px;
+        color:rgba(0,0,0,.6);
+        font-weight:bold;
+    }
+    .skill_item{
+        width: 100%;
+        height:30px;
+        margin:5px 0;
+        overflow: hidden;
+    }
+    .skill label{
+        display:inline-block;
+        width:60px;
+        height:30px;
+        text-align: right;
+        margin-right:15px;
+        line-height: 30px;
+    }
+    .skill .progress_box{
+        margin-top:12px;
+        display: inline-block;
+        width:140px;
+        height:14px;
+        background:rgba(0,0,0,.3);
+        border-radius: 14px;
+    }
+    .progress{
+        background:#FFF;
+        height:100%;
+        border-radius: 14px 0 0 14px;
+    }
+    .progress_HTML{
+        width:85%;
+    }
+    .progress_CSS{
+        width:85%;
+    }
+    .progress_JS{
+        width:75%;
+    }
+    .progress_JQ{
+        width:70%;
+    }
+    .progress_BS{
+        width:45%;
+    }
+    .progress_AJAX{
+        width:60%;
+    }
+    .progress_LESS{
+        width:35%;
+    }
+    .progress_Canvas{
+        width:20%;
+    }
+    .contact{
+        width:100%;
+        height:250px;
+        margin-top:230px;
+    }
+    .contact_item{
+        margin:5px auto 5px 12px;;
+    }
+    .contact_item i{
+        margin-right:10px;
+    }
+    .main .main-title{
+        font-size:24px;
+        margin:10px 0;
+        color:rgba(41, 180, 240,.5);
+    }
+    .main .time_line{
+        font-size:18px;
+        font-weight: bold;
+    }
+ /*   .main strong{
+        background:rgba(41, 180, 240,.5);
+        border-radius:2px;
+        padding:0 2px;
+        margin:0 3px;
+        color:#FFF;
+    }*/
+    .main p{
+        margin:10px 0;
+        line-height:29px;
+        text-indent: 30px;
+    }
+    .main li{
+        line-height: 29px;
+        list-style: square;
+        margin-left:20px;
+    }
+    .content .github{
+        color:rgba(41, 180, 240,.5);
+    }
+    /*span{
+        font-size:12px;
+    }*/
+</style>
+<body>
+<div class="sideBar">
+<div class="photo_intro">
+    <div class="photo"></div>
+    <div class="intro">
+        <h3>杨梦迪</h3>
+        <h6>江西师范大学计算机系科学与技术班</h6>
+        <h4>【前端工程师实习生】</h4>
+    </div>
+</div>
+    <div class="skill">
+        <div class="skill_item"><label>HTML</label><div class="progress_box"><div class="progress progress_HTML"></div></div></div>
+        <div class="skill_item"><label>CSS</label><div class="progress_box"><div class="progress progress_CSS"></div></div></div>
+        <div class="skill_item"><label>JavaScript</label><div class="progress_box"><div class="progress progress_JS"></div></div></div>
+        <div class="skill_item"><label>jQuery</label><div class="progress_box"><div class="progress progress_JQ"></div></div></div>
+        <div class="skill_item"><label>BootStrap</label><div class="progress_box"><div class="progress progress_BS"></div></div></div>
+        <div class="skill_item"><label>LESS</label><div class="progress_box"><div class="progress progress_LESS"></div></div></div>
+    </div>
+    <div class="contact">
+        <div class="contact_item"><i class="icon-envelope"></i>Mengdiyang@126.com</div>
+        <div class="contact_item"><i class="icon-github"></i>EarlyBirdss.github.io</div>
+        <div class="contact_item"><i class="icon-phone"></i>17687910163</div>
+    </div>
+</div>
+<div class="main">
+    <h1 class="main-title">项目经验</h1>
+    <div class="content">
+        <p>
+            <span class="time_line">2015年4月</span>跟随(未加入)<strong>百度前端学院IFE春季班</strong>使用原生JavaScript完成task01——个人博客，task02——js通用工具包，task03——单页应用个人任务管理管理器。<span class="github">EarlyBirdss.github.io/myGithubAccoutName&emsp;&emsp;EarlyBirdss.github.io/TaskManagement</span>
+        </p>
+        <p>
+            <span class="time_line">2015年7月</span>加入<strong>百度前端学院IFE暑假班</strong>以小组形式团队合作完成团队的介绍页，以及单页应用markdown编辑器。<span class="github">FE-legend/legend.github.io</span>
+        </p>
+        <p>
+        <span class="time_line">2015年8月</span>成为成都途风实习生，介入途风酒店项目，完成途风酒店个人中心的代码编写（其中包含订单list页，订单详情页，酒店收藏页，问题咨询页，订单点评页，浏览历史页）。</p>
+    </div>
+    <h1 class="main-title">项目心得</h1>
+    <div class="content">
+        <p>
+            <span class="time_line">个人任务管理管理器</span>是第一个完整的作品，使用JavaScript原生语句编写，JavaScript的知识模块几乎都已覆盖，此期间进步极大。
+        </p>
+        <p>
+            <span class="time_line">途风酒店项目</span>是第一次参与公司的大项目，历时3个多月，从切图到后台数据接洽，渐渐了解公司项目的流程。接触gulp，
+        </p>
+        
+    </div>
+</div>
+</body>
+</html>
