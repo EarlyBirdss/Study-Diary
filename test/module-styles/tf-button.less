@@ -1,0 +1,318 @@
+@yahei: 'Microsoft Yahei', '微软雅黑';
+@orangeURL: '/img/common/button/orange-btn.png';
+@blueURL: '/img/common/button/blue-btn.png';
+@yellowURL: '/img/common/button/yellow-btn.png';
+@grayURL: '/img/common/button/gray-btn.png';
+@disabledURL: '/img/common/button/disable-btn.png';
+
+//设置图片位置的
+.position(@left, @center, @right, @mwidth, @padding:14px) {
+	.tf-btn-corner-left {
+		background-position: 0 @left;
+	}
+
+	.tf-btn-center {
+		background-position: 0 @center;
+		min-width: @mwidth;
+		padding: 0 @padding;
+	}
+
+	.tf-btn-corner-right {
+		background-position: 0 @right;
+	}
+
+}
+
+//base
+.tf-btn {
+	position: relative;
+	display: inline-block;
+	text-align: center;
+	white-space: nowrap;
+	cursor: pointer;
+	font-weight: bold;
+	font-family: @yahei;
+	color: #fff;
+	padding: 0 6px;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+}
+
+.tf-btn-corner {
+	position: absolute;
+	top: 0;
+	width: 6px;
+}
+
+.tf-btn-corner,
+.tf-btn-center {
+	display: inline-block;
+	height: 100%;
+}
+
+.tf-btn-corner-left {
+	left: 0;
+}
+
+.tf-btn-corner-right {
+	right: 0;
+}
+
+//color
+.tf-btn-orange {
+	.tf-btn-corner,
+	.tf-btn-center {
+		background-image: url(@orangeURL);
+	}
+
+}
+
+.tf-btn-blue {
+	.tf-btn-corner,
+	.tf-btn-center {
+		background-image: url(@blueURL);
+	}
+
+}
+
+.tf-btn-yellow {
+	.tf-btn-corner,
+	.tf-btn-center {
+		background-image: url(@yellowURL);
+	}
+
+}
+
+.tf-btn-gray {
+	.tf-btn-corner,
+	.tf-btn-center {
+		background-image: url(@grayURL);
+	}
+
+}
+
+//size
+.tf-btn-xl {
+	height: 54px;
+	line-height: 54px;
+	font-size: 20px;
+}
+
+.tf-btn-lg {
+	height: 48px;
+	line-height: 48px;
+	font-size: 18px;
+}
+
+.tf-btn-mid {
+	height: 42px;
+	line-height: 42px;
+	font-size: 16px;
+}
+
+.tf-btn-sm {
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+}
+
+//action
+.tf-btn-active {
+}
+
+.tf-btn-disabled {
+	cursor: not-allowed;
+
+	.tf-btn-corner,
+	.tf-btn-center {
+		background-image: url(@disabledURL);
+	}
+
+}
+
+.tf-btn-orange {
+	//橙色特大按钮常规
+	&.tf-btn-xl {
+		.position(0px, -55px, -110px, 130px, 20px);
+	}
+
+	//橙色特大按钮点击
+	&.tf-btn-xl.tf-btn-active,
+	&.tf-btn-xl:hover {
+		.position(-165px, -220px, -275px, 130px, 20px);
+	}
+
+	//橙色大按钮常规
+	&.tf-btn-lg {
+		.position(-330px, -379px, -428px, 110px);
+	}
+
+	//橙色大按钮点击
+	&.tf-btn-lg.tf-btn-active,
+	&.tf-btn-lg:hover {
+		.position(-477px, -526px, -575px, 110px);
+	}
+
+	//橙色中按钮常规
+	&.tf-btn-mid {
+		.position(-623px, -666px, -709px, 90px);
+	}
+
+	//橙色中按钮点击
+	&.tf-btn-mid.tf-btn-active,
+	&.tf-btn-mid:hover {
+		.position(-752px, -795px, -838px, 90px);
+	}
+
+	//橙色小按钮常规
+	&.tf-btn-sm {
+		.position(-882px, -913px, -944px, 60px);
+	}
+
+	//橙色小按钮点击
+	&.tf-btn-sm.tf-btn-active,
+	&.tf-btn-sm:hover {
+		.position(-975px, -1006px, -1037px, 60px);
+	}
+
+}
+
+.tf-btn-gray {
+	//灰色特大按钮常规
+	&.tf-btn-xl {
+		.position(0px, -55px, -110px, 130px, 20px);
+	}
+
+	//灰色特大按钮点击
+	&.tf-btn-xl.tf-btn-active,
+	&.tf-btn-xl:hover {
+		.position(-165px, -220px, -275px, 130px, 20px);
+	}
+
+	//灰色大按钮常规
+	&.tf-btn-lg {
+		.position(-330px, -379px, -428px, 110px);
+	}
+
+	//灰色大按钮点击
+	&.tf-btn-lg.tf-btn-active,
+	&.tf-btn-lg:hover {
+		.position(-477px, -526px, -575px, 110px);
+	}
+
+	//灰色中按钮常规
+	&.tf-btn-mid {
+		.position(-623px, -666px, -709px, 90px);
+	}
+
+	//灰色中按钮点击
+	&.tf-btn-mid.tf-btn-active,
+	&.tf-btn-mid:hover {
+		.position(-752px, -795px, -838px, 90px);
+	}
+
+	//灰色小按钮常规
+	&.tf-btn-sm {
+		.position(-882px, -913px, -944px, 60px);
+	}
+
+	//灰色小按钮点击
+	&.tf-btn-sm.tf-btn-active,
+	&.tf-btn-sm:hover {
+		.position(-975px, -1006px, -1037px, 60px);
+	}
+
+}
+
+.tf-btn-blue {
+	//蓝色大按钮常规
+	&.tf-btn-lg {
+		.position(0px, -49px, -98px, 110px);
+	}
+
+	//蓝色大按钮点击
+	&.tf-btn-lg.tf-btn-active,
+	&.tf-btn-lg:hover {
+		.position(-147px, -196px, -245px, 110px);
+	}
+
+	//蓝色中按钮常规
+	&.tf-btn-mid {
+		.position(-294px, -337px, -380px, 90px);
+	}
+
+	//蓝色中按钮点击
+	&.tf-btn-mid.tf-btn-active,
+	&.tf-btn-mid:hover {
+		.position(-423px, -466px, -509px, 90px);
+	}
+
+	//蓝色小按钮常规
+	&.tf-btn-sm {
+		.position(-552px, -583px, -614px, 60px);
+	}
+
+	//蓝色小按钮点击
+	&.tf-btn-sm.tf-btn-active,
+	&.tf-btn-sm:hover {
+		.position(-645px, -676px, -707px, 60px);
+	}
+
+}
+
+.tf-btn-yellow {
+	//黄色大按钮常规
+	&.tf-btn-lg {
+		.position(0px, -49px, -98px, 110px);
+	}
+
+	//黄色大按钮点击
+	&.tf-btn-lg.tf-btn-active,
+	&.tf-btn-lg:hover {
+		.position(-147px, -196px, -245px, 110px);
+	}
+
+	//黄色中按钮常规
+	&.tf-btn-mid {
+		.position(-294px, -337px, -380px, 90px);
+	}
+
+	//黄色中按钮点击
+	&.tf-btn-mid.tf-btn-active,
+	&.tf-btn-mid:hover {
+		.position(-423px, -466px, -509px, 90px);
+	}
+
+	//黄色小按钮常规
+	&.tf-btn-sm {
+		.position(-552px, -583px, -614px, 60px);
+	}
+
+	//黄色小按钮点击
+	&.tf-btn-sm.tf-btn-active,
+	&.tf-btn-sm:hover {
+		.position(-645px, -676px, -707px, 60px);
+	}
+
+}
+
+//大按钮禁用
+.tf-btn-lg.tf-btn-disabled,
+.tf-btn-lg.tf-btn-disabled:hover {
+	.position(0px, -49px, -98px, 110px);
+}
+
+//中按钮禁用
+.tf-btn-mid.tf-btn-disabled,
+.tf-btn-mid.tf-btn-disabled:hover {
+	.position(-147px, -190px, -233px, 90px);
+}
+
+//小按钮禁用
+.tf-btn-sm.tf-btn-disabled,
+.tf-btn-sm.tf-btn-disabled:hover {
+	.position(-276px, -307px, -338px, 60px);
+}

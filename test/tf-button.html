@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>css模块化学习之宽度自适应按钮</title>
+	<link rel="stylesheet" type="text/css" href="module-styles/tf-">
+</head>
+<body>
+
+</body>
+</html>
+<meta charset="utf-8">
+<style rel="stylesheet">
+.line-height: {
+	margin:20px 0;
+	padding:20px 40px;
+	background-color: #fff;
+	border:1px solid #999;
+}
+</style>
+<div style="width: 1000px;margin: 50 auto;">
+<p>橙色特大按钮常规</p>
+<a href="javascript:;" class="tf-btn tf-btn-orange tf-btn-xl">
+	<i class="tf-btn-corner tf-btn-corner-left"></i>
+	<span class="tf-btn-center">橙色特大按钮常规</span>
+	<i class="tf-btn-corner tf-btn-corner-right"></i> 
+</a>
+<!-- <div class="line-height">
+	<pre>
+		<code class="language-html" data-lang="html">
+			<a href="javascript:;" class="tf-btn tf-btn-orange tf-btn-xl">
+				<i class="tf-btn-corner tf-btn-corner-left"></i>
+				<span class="tf-btn-center">橙色特大按钮常规</span>
+				<i class="tf-btn-corner tf-btn-corner-right"></i> 
+			</a>
+		</code>
+	</pre>
+</div> -->
+<p>橙色特大按钮点击</p>
+<a href="javascript:;" class="tf-btn tf-btn-orange tf-btn-xl tf-btn-active">
+	<i class="tf-btn-corner tf-btn-corner-left"></i>
+	<span class="tf-btn-center">橙色特大按钮点击</span>
+	<i class="tf-btn-corner tf-btn-corner-right"></i> 
+</a>
+<p>橙色大按钮常规</p>
+<a href="javascript:;" class="tf-btn tf-btn-orange tf-btn-lg">
+	<i class="tf-btn-corner tf-btn-corner-left"></i>
+	<span class="tf-btn-center">橙色大按钮常规</span>
+	<i class="tf-btn-corner tf-btn-corner-right"></i> 
+</a>
+<p>橙色大按钮点击</p>
+<a href="javascript:;" class="tf-btn tf-btn-orange tf-btn-lg tf-btn-active">
+	<i class="tf-btn-corner tf-btn-corner-left"></i>
+	<span class="tf-btn-center">橙色大按钮点击</span>
+	<i class="tf-btn-corner tf-btn-corner-right"></i> 
+</a>
+<p>橙色中按钮常规</p>
+<a href="javascript:;" class="tf-btn tf-btn-orange tf-btn-mid">
+	<i class="tf-btn-corner tf-btn-corner-left"></i>
+	<span class="tf-btn-center">橙色中按钮常规</span>
+	<i class="tf-btn-corner tf-btn-corner-right"></i> 
+</a>
+<p>橙色中按钮点击</p>
+<a href="javascript:;" class="tf-btn tf-btn-orange tf-btn-mid tf-btn-active">
+	<i class="tf-btn-corner tf-btn-corner-left"></i>
+	<span class="tf-btn-center">橙色中按钮点击</span>
+	<i class="tf-btn-corner tf-btn-corner-right"></i> 
+</a>
+<p>橙色小按钮常规</p>
+<a href="javascript:;" class="tf-btn tf-btn-orange tf-btn-sm">
+	<i class="tf-btn-corner tf-btn-corner-left"></i>
+	<span class="tf-btn-center">橙色小按钮常规</span>
+	<i class="tf-btn-corner tf-btn-corner-right"></i> 
+</a>
+<p>橙色小按钮点击</p>
+<a href="javascript:;" class="tf-btn tf-btn-orange tf-btn-sm tf-btn-active">
+	<i class="tf-btn-corner tf-btn-corner-left"></i>
+	<span class="tf-btn-center">橙色小按钮点击</span>
+	<i class="tf-btn-corner tf-btn-corner-right"></i> 
+</a>
+<p>灰色特大按钮常规</p>
+<a href="javascript:;" class="tf-btn tf-btn-gray tf-btn-xl">
+	<i class="tf-btn-corner tf-btn-corner-left"></i>
+	<span class="tf-btn-center">灰色特大按钮常规</span>
+	<i class="tf-btn-corner tf-btn-corner-right"></i> 
+</a>
+<p>灰色特大按钮点击</p>
+<a href="javascript:;" class="tf-btn tf-btn-gray tf-btn-xl tf-btn-active">
+	<i class="tf-btn-corner tf-btn-corner-left"></i>
+	<span class="tf-btn-center">灰色特大按钮点击</span>
+	<i class="tf-btn-corner tf-btn-corner-right"></i> 
+</a>
+<p>灰色大按钮常规</p>
+<a href="javascript:;" class="tf-btn tf-btn-gray tf-btn-lg">
+	<i class="tf-btn-corner tf-btn-corner-left"></i>
+	<span class="tf-btn-center">灰色大按钮常规</span>
+	<i class="tf-btn-corner tf-btn-corner-right"></i> 
+</a>
+<p>灰色大按钮点击</p>
+<a href="javascript:;" class="tf-btn tf-btn-gray tf-btn-lg tf-btn-active">
+	<i class="tf-btn-corner tf-btn-corner-left"></i>
+	<span class="tf-btn-center">灰色大按钮点击</span>
+	<i class="tf-btn-corner tf-btn-corner-right"></i> 
+</a>
+<p>灰色中按钮常规</p>
+<a href="javascript:;" class="tf-btn tf-btn-gray tf-btn-mid">
+	<i class="tf-btn-corner tf-btn-corner-left"></i>
+	<span class="tf-btn-center">灰色中按钮点击</span>
+	<i class="tf-btn-corner tf-btn-corner-right"></i> 
+</a>
+<p>灰色中按钮点击</p>
+<a href="javascript:;" class="tf-btn tf-btn-gray tf-btn-mid tf-btn-active">
+	<i class="tf-btn-corner tf-btn-corner-left"></i>
+	<span class="tf-btn-center">灰色中按钮点击</span>
+	<i class="tf-btn-corner tf-btn-corner-right"></i> 
+</a>
+<p>灰色小按钮常规</p>
+<a href="javascript:;" class="tf-btn tf-btn-gray tf-btn-sm">
+	<i class="tf-btn-corner tf-btn-corner-left"></i>
+	<span class="tf-btn-center">灰色小按钮常规</span>
+	<i class="tf-btn-corner tf-btn-corner-right"></i> 
+</a>
+<p>灰色小按钮点击</p>
+<a href="javascript:;" class="tf-btn tf-btn-gray tf-btn-sm tf-btn-active">
+	<i class="tf-btn-corner tf-btn-corner-left"></i>
+	<span class="tf-btn-center">灰色小按钮点击</span>
+	<i class="tf-btn-corner tf-btn-corner-right"></i> 
+</a>
+<p>蓝色大按钮常规</p>
+<a href="javascript:;" class="tf-btn tf-btn-blue tf-btn-lg">
+	<i class="tf-btn-corner tf-btn-corner-left"></i>
+	<span class="tf-btn-center">蓝色大按钮常规</span>
+	<i class="tf-btn-corner tf-btn-corner-right"></i> 
+</a>
+<p>蓝色大按钮点击</p>
+<a href="javascript:;" class="tf-btn tf-btn-blue tf-btn-lg tf-btn-active">
+	<i class="tf-btn-corner tf-btn-corner-left"></i>
+	<span class="tf-btn-center">蓝色大按钮点击</span>
+	<i class="tf-btn-corner tf-btn-corner-right"></i> 
+</a>
+<p>蓝色中按钮常规</p>
+<a href="javascript:;" class="tf-btn tf-btn-blue tf-btn-mid">
+	<i class="tf-btn-corner tf-btn-corner-left"></i>
+	<span class="tf-btn-center">蓝色中按钮常规</span>
+	<i class="tf-btn-corner tf-btn-corner-right"></i> 
+</a>
+<p>蓝色中按钮点击</p>
+<a href="javascript:;" class="tf-btn tf-btn-blue tf-btn-mid tf-btn-active">
+	<i class="tf-btn-corner tf-btn-corner-left"></i>
+	<span class="tf-btn-center">蓝色中按钮点击</span>
+	<i class="tf-btn-corner tf-btn-corner-right"></i> 
+</a>
+<p>蓝色小按钮常规</p>
+<a href="javascript:;" class="tf-btn tf-btn-blue tf-btn-sm">
+	<i class="tf-btn-corner tf-btn-corner-left"></i>
+	<span class="tf-btn-center">蓝色小按钮常规</span>
+	<i class="tf-btn-corner tf-btn-corner-right"></i> 
+</a>
+<p>蓝色小按钮点击</p>
+<a href="javascript:;" class="tf-btn tf-btn-blue tf-btn-sm tf-btn-active">
+	<i class="tf-btn-corner tf-btn-corner-left"></i>
+	<span class="tf-btn-center">蓝色小按钮点击</span>
+	<i class="tf-btn-corner tf-btn-corner-right"></i> 
+</a>
+<p>黄色大按钮常规</p>
+<a href="javascript:;" class="tf-btn tf-btn-yellow tf-btn-lg">
+	<i class="tf-btn-corner tf-btn-corner-left"></i>
+	<span class="tf-btn-center">黄色大按钮常规</span>
+	<i class="tf-btn-corner tf-btn-corner-right"></i> 
+</a>
+<p>黄色大按钮点击</p>
+<a href="javascript:;" class="tf-btn tf-btn-yellow tf-btn-lg tf-btn-active">
+	<i class="tf-btn-corner tf-btn-corner-left"></i>
+	<span class="tf-btn-center">黄色大按钮点击</span>
+	<i class="tf-btn-corner tf-btn-corner-right"></i> 
+</a>
+<p>黄色中按钮常规</p>
+<a href="javascript:;" class="tf-btn tf-btn-yellow tf-btn-mid">
+	<i class="tf-btn-corner tf-btn-corner-left"></i>
+	<span class="tf-btn-center">黄色中按钮点击</span>
+	<i class="tf-btn-corner tf-btn-corner-right"></i> 
+</a>
+<p>黄色中按钮点击</p>
+<a href="javascript:;" class="tf-btn tf-btn-yellow tf-btn-mid tf-btn-active">
+	<i class="tf-btn-corner tf-btn-corner-left"></i>
+	<span class="tf-btn-center">黄色中按钮点击</span>
+	<i class="tf-btn-corner tf-btn-corner-right"></i> 
+</a>
+<p>黄色小按钮常规</p>
+<a href="javascript:;" class="tf-btn tf-btn-yellow tf-btn-sm">
+	<i class="tf-btn-corner tf-btn-corner-left"></i>
+	<span class="tf-btn-center">黄色小按钮常规</span>
+	<i class="tf-btn-corner tf-btn-corner-right"></i> 
+</a>
+<p>黄色小按钮点击</p>
+<a href="javascript:;" class="tf-btn tf-btn-yellow tf-btn-sm tf-btn-active">
+	<i class="tf-btn-corner tf-btn-corner-left"></i>
+	<span class="tf-btn-center">黄色小按钮点击</span>
+	<i class="tf-btn-corner tf-btn-corner-right"></i> 
+</a>
+<p>大按钮禁用</p>
+<a href="javascript:;" class="tf-btn tf-btn-yellow tf-btn-lg tf-btn-disabled">
+	<i class="tf-btn-corner tf-btn-corner-left"></i>
+	<span class="tf-btn-center">大按钮禁用</span>
+	<i class="tf-btn-corner tf-btn-corner-right"></i> 
+</a>
+<p>中按钮禁用</p>
+<a href="javascript:;" class="tf-btn tf-btn-yellow tf-btn-mid tf-btn-disabled">
+	<i class="tf-btn-corner tf-btn-corner-left"></i>
+	<span class="tf-btn-center">中按钮禁用</span>
+	<i class="tf-btn-corner tf-btn-corner-right"></i> 
+</a>
+<p>小按钮禁用</p>
+<a href="javascript:;" class="tf-btn tf-btn-yellow tf-btn-sm tf-btn-disabled">
+	<i class="tf-btn-corner tf-btn-corner-left"></i>
+	<span class="tf-btn-center">小按钮禁用</span>
+	<i class="tf-btn-corner tf-btn-corner-right"></i> 
+</a>
+</div>
