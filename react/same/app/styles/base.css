@@ -1,0 +1,32 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul,
+ol,
+li,
+dd,
+dl,
+dt {
+    list-style-type: none;
+}
+
+a {
+    color: #777;
+    text-decoration: none;
+}
+
+body {
+    color: #777;
+    font-family: "Microsoft Yahei", "Arial";
+    font-size: 13px;
+    line-height: 1.4em;
+}
+
+@font-face {
+    font-family: 'iconfont';
+    src: url('iconfont.eot');
+    src: url('iconfont.eot?#iefix') format('embedded-opentype'), url('../iconfont/iconfont.woff') format('woff'), url('../iconfonticonfont.ttf') format('truetype'), url('iconfont.svg#iconfont') format('svg');
+}
