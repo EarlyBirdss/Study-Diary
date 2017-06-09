@@ -7,17 +7,6 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.myapp {
-    position: relative;
-    width: 320px;
-    height: 460px;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    margin: 50px auto;
-    border: 5px solid #efefef;
-    box-shadow: 5px 5px 10px #f8f8f8;
-}
-
 #topbar {
     position: relative;
     top: 0;
@@ -155,3 +144,4 @@
     text-align: center;
     line-height: 35px;
 }
+

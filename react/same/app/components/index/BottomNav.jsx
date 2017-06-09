@@ -1,4 +1,5 @@
 import React from "react";
+import {NavLink} from "react-router-dom";
 
 class BottomNav extends React.Component {
     constructor (props) {
@@ -10,11 +11,22 @@ class BottomNav extends React.Component {
 
     render() {
         return (
-            <ul>
-                <li><Link to="/channelList">我的频道</Link></li>
-                <li><Link to="/explore">发现</Link></li>
-                <li><Link to="/myContent">我的内容</Link></li>
-                <li><Link to="/user">关于我</Link></li>
+            <ul className="bottom-nav">
+                <li className="nav-item">
+                    <NavLink to="/channelList" activeClassName="active">我的频道</NavLink>
+                </li>
+                <li className="nav-item">
+                    <NavLink to="/explore" activeClassName="active">发现</NavLink>
+                </li>
+                <li className="nav-item">
+
+                </li>
+                <li className="nav-item">
+                    <NavLink to="/message" activeClassName="active">消息</NavLink>
+                </li>
+                <li className="nav-item">
+                    <NavLink to="/myContent" activeClassName="active">我的内容</NavLink>
+                </li>
             </ul>
         );
     }

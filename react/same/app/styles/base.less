@@ -1,7 +1,38 @@
-* {
-    padding: 0;
-    margin: 0;
+html,
+body,
+div,
+ul,
+ol,
+li,
+dd,
+dl,
+dt,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+form,
+input,
+textarea,
+select,
+button,
+table,
+thead,
+tbody,
+tr,
+td,
+th,
+a,
+span,
+i,
+code,
+label {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 ul,
@@ -14,19 +45,43 @@ dt {
 }
 
 a {
-    color: #777;
     text-decoration: none;
+
+    color: #777;
 }
 
 body {
-    color: #777;
-    font-family: "Microsoft Yahei", "Arial";
+    font-family: 'Microsoft Yahei', 'Arial';
     font-size: 13px;
     line-height: 1.4em;
+
+    color: #777;
 }
 
-@font-face {
-    font-family: 'iconfont';
-    src: url('iconfont.eot');
-    src: url('iconfont.eot?#iefix') format('embedded-opentype'), url('../iconfont/iconfont.woff') format('woff'), url('../iconfonticonfont.ttf') format('truetype'), url('iconfont.svg#iconfont') format('svg');
+input,
+textarea,
+button,
+select {
+    &:focus {
+        outline: none;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label {
+    font-weight: normal;
+}
+
+i {
+    font-style: normal;
+}
+
+button{
+    background: none;
+    border: none;
 }

@@ -1,9 +1,13 @@
 import React from "react";
+import BottomNav from "../index/BottomNav.jsx";
 
 class Index extends React.Component{
     render() {
         return (
-            <div>index</div>
+            <div>
+            	index
+            	<BottomNav />
+            </div>
         );
     }
 }

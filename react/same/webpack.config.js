@@ -33,7 +33,8 @@ module.exports = {
 
     // 配置plugin
     plugins: [
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.optimize.CommonsChunkPlugin("iconfont/iconfont.js"), // xlink方式引入iconfont
         // new HtmlwebpackPlugin({
         //  title: "SAME"
         // })

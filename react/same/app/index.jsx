@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDom from "react-dom";
-import { Router, Route, Link, HashRouter } from "react-router-dom";
+import { Router, Route, NavLink, HashRouter } from "react-router-dom";
 import { createHashHistory } from "history";
 
 import App from "./components/App.jsx";
@@ -10,15 +10,17 @@ import Explore from "./components/explore/Explore.jsx";
 import MyContent from "./components/mycontents/MyContents.jsx";
 import Message from "./components/message/Message.jsx";
 
-import "./iconfont/iconfont.eot";
-import "./iconfont/iconfont.svg";
-import "./iconfont/iconfont.ttf";
-import "./iconfont/iconfont.woff";
+import ChannelDetail from "./components/channelList/ChannelDetail.jsx";
+import CreateChannel from "./components/channelList/CreateChannel.jsx";
+
+import "./scripts/util.js";
+import "./scripts/api.js";
+
 import "./iconfont/iconfont.js";
-import "./iconfont/iconfont.css";
 
 import "./styles/base.less";
-import "./styles/base.less";
+import "./styles/index.less";
+import "./styles/common.less";
 
 const history = createHashHistory();
 
@@ -31,23 +33,9 @@ ReactDom.render(
                 <Route path="/explore" component={Explore} />
                 <Route path="/message" component={Message} />
                 <Route path="/myContent" component={MyContent} />
-                <ul className="bottom-nav">
-                    <li className="nav-item">
-                        <Link to="/channelList">我的频道</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link to="/explore">发现</Link>
-                    </li>
-                    <li className="nav-item">
 
-                    </li>
-                    <li className="nav-item">
-                        <Link to="/message">消息</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link to="/myContent">我的内容</Link>
-                    </li>
-                </ul>
+                <Route path="/channelDetail/:channelId" component={ChannelDetail} />
+                <Route path="/createChannel" component={CreateChannel} />
             </div>
         </Router>
     ),

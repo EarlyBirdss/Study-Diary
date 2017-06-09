@@ -1,9 +1,13 @@
 import React from "react";
+import BottomNav from "../index/BottomNav.jsx";
 
 class Explore extends React.Component{
     render() {
         return (
-            <div>explore</div>
+            <div>
+            	explore
+            	<BottomNav />
+        	</div>
         );
     }
 }
