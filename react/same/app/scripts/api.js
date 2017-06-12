@@ -41,7 +41,7 @@
 			return res;
 		},
 		setUserChannel: function(userId, channelId, channel) {
-
+			console.log(userId, channelId, channel);
 			var theUser = this.getUserById(userId);
 
 			if (util.type(channelId) !== "number") {
@@ -49,11 +49,11 @@
 				return false;
 			}
 
-			var channelData = theUser.channels;
+			var channels = theUser.channels;
 
-			if (channelData) {
-				channelData[channelId] = channel;
-				channelData.length++;
+			if (channels) {
+				channels[channelId] = channel;
+				channels.length++;
 
 			} else {
 				theUser.channels = {
@@ -62,19 +62,25 @@
 				}
 			}
 
-			theUser.channels[channelId] = channel;
-
 			this.setUser(userId, theUser);
 		},
 		setUserContent: function(userId, contentId, content) {
-			var userData = this.getUserById(userId);
+			var theUser = this.getUserById(userId);
 
 			if (util.type(contentId) !== "number") {
 				throw new Error("invalid contentId");
 				return false;
 			}
 
-			userData.contents[contentId] = content;
+			if (theUser.contents) {
+				theUser.contents[contentId] = content;
+			} else {
+				theUser.contents = {
+					[contentId]: content
+				};
+			}
+
+			this.setUser(userId, theUser);
 		},
 		removeUserChannel: function(userId, channelId) {
 			var userData = this.getUserById(userId);
@@ -129,12 +135,16 @@
 
 			var channelData = this.getChannels();
 
-			channelData[channelId] = channel;
-			if (util.type(channelData.length) === "number") {
-				channelData.length++;
-			} else {
-				channelData.length = 1;
+			if (!channelData[channelId]) {
+				console.log("222");
+				if (util.type(channelData.length) === "number") {
+					channelData.length++;
+				} else {
+					channelData.length = 1;
+				}
 			}
+
+			channelData[channelId] = channel;
 
 			this._setChannels(channelData);
 		},
@@ -168,7 +178,7 @@
 				}
 			}
 
-			this.setChannelChannel(channelId, channelData);
+			this.setChannelChannel(channelId, theChannel);
 		},
 		removeChannelContent: function(channelId, contentId) {
 
@@ -192,13 +202,19 @@
 		},
 		setContent: function(userId, channelId, contentId, content) {
 
+
+			if (util.type(userId) !== "number") {
+				throw new Error("invalid userId");
+				return false;
+			}
+
 			if (util.type(channelId) !== "number") {
 				throw new Error("invalid channelId");
 				return false;
 			}
 
-			if (util.type(userId) !== "number") {
-				throw new Error("invalid userId");
+			if (util.type(contentId) !== "number") {
+				throw new Error("invalid contentId");
 				return false;
 			}
 
@@ -243,7 +259,7 @@
 				channelId;
 
 			channelId = util.type(channelData.length) === "number" ? channelData.length + 1 : 1;
-
+			console.log(channelId);
 			channel = Object.assign(channel, {
 				id: channelId,
 				userId: userId,
@@ -255,7 +271,7 @@
 		},
 		getChannelList: function() {
 			var theUser = dataBase.getUserById(userId),
-				channels = theUser.channels;
+				channels = theUser.channels || {};
 
 			return _util.jsonWrapper(_util.slice(channels));
 		},
@@ -281,7 +297,34 @@
 
 			return _util.jsonWrapper(_util.slice(contents));
 		},
-		createContent: dataBase.setContent.bind(dataBase),
+		createContent: function(channelId, content) {
+
+			if (util.type(channelId) !== "number") {
+				return _util.jsonWrapper("invalid channelId", false);
+			}
+
+			var theChannel = dataBase.getChannelById(channelId);
+
+			var userName = dataBase.getUserById(userId).userName,
+				channelName = dataBase.getChannelById(channelId).channelName,
+				createTime = util.date2string(Date.now());
+
+			contentId = theChannel.contents && util.type(theChannel.contents.length) === "number" ? theChannel.contents.length + 1 : 1;
+
+			content = Object.assign(content, {
+				id: contentId,
+				channelId: channelId,
+				channelName: channelName,
+				userId: userId,
+				userName: userName,
+				createTime: createTime,
+				likedNum: 0,
+			});
+
+			dataBase.setContent(userId, channelId, contentId, content);
+
+			return _util.jsonWrapper(content);
+		},
 	};
 
 	window.api = api;

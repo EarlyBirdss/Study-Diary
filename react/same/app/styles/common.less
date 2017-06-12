@@ -2,24 +2,42 @@
 @borderGray: #f3f3f3;
 @red: #f14646;
 
+
+
+/* ICONFONT_SYMBOL START */
 .icon {
 	width: 1em; height: 1em;
 	vertical-align: -0.15em;
 	fill: currentColor;
 	overflow: hidden;
 }
+/* ICONFONT_SYMBOL END */
 
-.hide{
+/* COMMON STYLE START */
+.hide {
 	display: none!important;
 }
 
-.show{
+.show {
 	display: inline-block!important;
 }
 
-.text-red{
+.text-red {
 	color: @red;
 }
+
+.clearfix {
+	&:after{
+		display: block;
+		height: 0;
+		width: 0;
+		content: "";
+		clear: both;
+	}
+}
+/* COMMON STYLE END */
+
+/* APP STYLE START */
 #myapp {
     position: relative;
     width: 100%;
@@ -30,7 +48,10 @@
     box-shadow: 5px 5px 10px @borderGray;
     font-size: 0.3467rem;
 }
+/* APP STYLE END */
 
+
+/* NAV STYLE START */
 .bottom-nav{
 	position: absolute;
 	bottom: 0;
@@ -49,7 +70,32 @@
 	border-right: 1px solid @borderGray;
 }
 
-
 .active{
 	color: @blue;
 }
+/* NAV STYLE START */
+
+/* ERROR_POP STRAT */
+.error-pop-box{
+	position: fixed;
+	top: 40vh;
+	left: 16vw;
+	width: 68vw;
+	border: 1px solid @borderGray;
+	border-radius:4px;
+	box-shadow: 1px 1px 3px @borderGray;
+	text-align: center;
+	background: #fefefe;
+	opacity: 1;
+
+	.content-box{
+		padding: 0.4rem;
+		border-bottom: 2px solid @borderGray;
+	}
+
+	.btn-bar{
+		padding: 0.2rem;
+	}
+}
+
+/* ERROR_POP END */

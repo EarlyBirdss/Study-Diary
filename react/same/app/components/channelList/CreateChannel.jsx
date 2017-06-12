@@ -21,7 +21,7 @@ class CreateChannel extends React.Component{
 	handleChannelName(e) {
 		var value = e.target.value;
 
-		if (value.length > 10) {
+		if (value.length > 20) {
 			this.setState({
 				$channelName: {
 					error: true
@@ -79,7 +79,7 @@ class CreateChannel extends React.Component{
 		return (
 			<div className="form-box">
 				<div className="form-row">
-					<input type="text" placeholder="输入你的频道名称（10个字以内）" value={ this.state.channelName } onChange={ this.handleChannelName.bind(this) } />
+					<input type="text" placeholder="输入你的频道名称（20个字以内）" value={ this.state.channelName } onChange={ this.handleChannelName.bind(this) } />
 					<span className={this.state.$channelName.error ? "show" : "hide" + " text-red"}>超过10字符</span>
 				</div>
 				<div className="form-row">
