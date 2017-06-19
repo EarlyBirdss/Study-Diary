@@ -1,6 +1,6 @@
 import React from "react";
 
-class ErrorPop extends React.Component {
+class Pop extends React.Component {
 	constructor(props) {
 		super(props);
 	}
@@ -10,12 +10,12 @@ class ErrorPop extends React.Component {
 	}
 
 	confirm() {
-		Array.prototype.slice.call(document.querySelectorAll('.error-pop-box')).map((item) => {item.style.display = 'none'});
+		Array.prototype.slice.call(document.querySelectorAll('.pop-box')).map((item) => {item.style.display = 'none'});
 	}
 
 	render() {
 		return (
-			<div className="error-pop-box">
+			<div className="pop-box">
 				<div className="content-box">
 					{ this.props.msg }
 				</div>
@@ -28,4 +28,4 @@ class ErrorPop extends React.Component {
 
 }
 
-export default ErrorPop;
+export default Pop;

@@ -10,8 +10,10 @@ import Explore from "./components/explore/Explore.jsx";
 import MyContent from "./components/mycontents/MyContents.jsx";
 import Message from "./components/message/Message.jsx";
 
-import ChannelDetail from "./components/channelList/ChannelDetail.jsx";
-import CreateChannel from "./components/channelList/CreateChannel.jsx";
+import CreateChannel    from "./components/createChannel/CreateChannel.jsx";
+import ChannelDetail    from "./components/channelDetail/ChannelDetail.jsx";
+import ChannelInfo      from "./components/channelDetail/ChannelInfo.jsx";
+import ChannelAbsEditor from "./components/channelDetail/ChannelAbsEditor.jsx";
 
 import "./scripts/util.js";
 import "./scripts/api.js";
@@ -36,6 +38,8 @@ ReactDom.render(
 
                 <Route path="/channelDetail/:channelId" component={ChannelDetail} />
                 <Route path="/createChannel" component={CreateChannel} />
+                <Route path="/channelInfo/:channelId" component={ChannelInfo} />
+                <Route path="/editChannelAbs/:channelId" component={ChannelAbsEditor} />
             </div>
         </Router>
     ),

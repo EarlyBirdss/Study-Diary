@@ -1,0 +1,33 @@
+@import url(./color.less);
+
+.info-wrapper{
+	width: 100%;
+	height: 100%;
+	background: @bgGray;
+}
+
+.info-box{
+	margin-top: 0.3rem;
+	padding: 0.4rem 0.2rem;
+	background: #fff;
+
+	.row{
+		display: block;
+		margin-bottom: 0.3rem;
+		padding-bottom: 0.2rem;
+		border-bottom: 1px solid @borderGray;
+		overflow: hidden;
+
+		label{
+			float: left;
+			width: 20vw;
+		}
+
+		.info-user{
+			float: right;
+			width: 70vw;
+			text-align: right;
+			color: @blue;
+		}
+	}
+}

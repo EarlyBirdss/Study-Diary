@@ -136,7 +136,6 @@
 			var channelData = this.getChannels();
 
 			if (!channelData[channelId]) {
-				console.log("222");
 				if (util.type(channelData.length) === "number") {
 					channelData.length++;
 				} else {
@@ -259,7 +258,7 @@
 				channelId;
 
 			channelId = util.type(channelData.length) === "number" ? channelData.length + 1 : 1;
-			console.log(channelId);
+
 			channel = Object.assign(channel, {
 				id: channelId,
 				userId: userId,
@@ -282,6 +281,10 @@
 
 			var theChannel = dataBase.getChannelById(channelId);
 
+			if (!theChannel) {
+				return _util.jsonWrapper("invalid channelId", false);
+			}
+
 			theChannel.contents = _util.slice(theChannel.contents || {});
 
 			return _util.jsonWrapper(theChannel);
@@ -295,6 +298,10 @@
 			var theChannel = dataBase.getChannelById(channelId),
 				contents = theChannel.contents || {};
 
+			if (!theChannel) {
+				return _util.jsonWrapper("invalid channelId", false);
+			}
+
 			return _util.jsonWrapper(_util.slice(contents));
 		},
 		createContent: function(channelId, content) {
@@ -304,6 +311,10 @@
 			}
 
 			var theChannel = dataBase.getChannelById(channelId);
+
+			if (!theChannel) {
+				return _util.jsonWrapper("invalid channelId", false);
+			}
 
 			var userName = dataBase.getUserById(userId).userName,
 				channelName = dataBase.getChannelById(channelId).channelName,
@@ -325,6 +336,37 @@
 
 			return _util.jsonWrapper(content);
 		},
+		getChannelAbs: function(channelId) {
+			if (util.type(channelId) !== "number") {
+				return _util.jsonWrapper("invalid channelId", false);
+			}
+
+			var theChannel = dataBase.getChannelById(channelId),
+				abs = theChannel.abstract || "";
+
+			return _util.jsonWrapper(abs);
+		},
+		updateChannelAbs: function(channelId, data) {
+			if (util.type(channelId) !== "number") {
+				return _util.jsonWrapper("invalid channelId", false);
+			}
+
+			if (!data.abstract) {
+				return _util.jsonWrapper("empty abstract", false);
+			}
+
+			var theChannel = dataBase.getChannelById(channelId);
+
+			if (!theChannel) {
+				return _util.jsonWrapper("invalid channelId", false);
+			}
+
+			theChannel.abstract = data.abstract;
+
+			dataBase.setChannelChannel(channelId, theChannel);
+
+			return _util.jsonWrapper(theChannel.abstract);
+		}
 	};
 
 	window.api = api;
