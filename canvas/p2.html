@@ -1,0 +1,43 @@
+<canvas id="canvas" width="700" height="700" style="border: 1px solid #333;">
+</canvas>
+
+<script>
+	var can = document.getElementById("canvas");
+	var context = can.getContext("2d");
+
+	context.save(); //保存当前context的状态
+
+	context.fillStyle = "#effff3";
+	context.fillRect(0, 0, 100, 400);
+
+	context.fillStyle = "rgba(255, 0, 0, 0.1)";
+	context.translate(100, 100);
+	context.scale(0.5, 0.5);
+	context.rotate(Math.PI / 4);
+	context.fillRect(0, 0, 100, 100);
+
+	context.restore(); // 恢复刚刚保存的状态，保存恢复只能使用一次
+	context.save();
+	context.fillStyle = "rgba(255, 0 , 0 ,0.2)";
+	context.scale(0.5, 0.5);
+	context.translate(100, 100);
+	context.rotate(Math.PI / 4);
+	context.fillRect(0, 0, 100, 100);
+
+	context.restore(); // 恢复刚刚保存的状态，保存恢复只能使用一次
+	context.save();
+	context.fillStyle = "rgba(255, 0 , 0 ,0.3)";
+	context.rotate(Math.PI / 4);
+	context.scale(0.5, 0.5);
+	context.translate(100, 100);
+	context.fillRect(0, 0, 100, 100);
+
+	context.restore(); // 恢复刚刚保存的状态，保存恢复只能使用一次
+	context.save();
+	context.fillStyle = "rgba(255, 0 , 0 ,0.4)";
+	context.rotate(Math.PI / 4);
+	context.translate(100, 100);
+	context.scale(0.5, 0.5);
+	context.fillRect(0, 0, 100, 100);
+
+</script>

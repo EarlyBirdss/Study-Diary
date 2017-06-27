@@ -1,0 +1,195 @@
+<body>
+	
+<h5>Study form <a href="http://blog.csdn.net/clh604/article/details/8536059">html5 canvas 详细使用教程</a></h5>
+
+<label>基本知识</label>
+<hr>
+<ul>
+	<li>
+		<p>创建上下文</p>
+		<code>
+			var canvas = document.getElementById("canvas");
+			var context = canvas.getContext("2d");
+		</code>
+	</li>
+	<li>
+		<p>绘制图像</p>
+		<code>
+			context.fill(); // 填充
+			<br>
+			context.stroke(); // 绘制边框
+		</code>
+	</li>
+	<li>
+		<p>绘制的样式</p>
+		<code>
+			context.fillStyle // 填充的样式
+			<br>
+			context.strokeStyle // 边框的样式
+			<br>
+			context.lineWidth // 边框宽度
+		</code>
+	</li>
+	<li>
+		<p>颜色的表示方式</p>
+		<code>
+			与css一致
+		</code>
+	</li>
+	<li>
+		<p>api</p>
+		<code>
+			<p>绘制矩形</p>
+			context.fillRect(x, y, width, height);
+			<br>
+			context.strokeRect(x, y, width, height);
+			<br>
+		</code>
+		<code>
+			<p>清除矩形区域</p>
+			context.clearRect(x, y, width, height);
+		</code>
+		<code>
+			<p>圆弧
+				(<label>只是创建一个路径，调用context.fill()或context.stroke()绘制</label>
+				<label>记得context.beginPath()及context.closePath();</label>)
+			</p>
+			context.arc(x, y, radius, startAngle, endAngle, anticlockwise);
+			<br>
+			// x,y 圆心横纵坐标
+			<br>
+			// anticlockwise: 逆时针： true, 顺时针： false
+		</code>
+		<code>
+			<p>线段</p>
+			context.moveTo(x, y); // 定义线条开始坐标
+			<br>
+			context.lineTo(x, y); // 定义线条结束坐标
+		</code>
+		<code>
+			<p>曲线</p>
+			context.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y); //贝塞尔曲线
+			<br>
+			context.quadraticCurveTo(qcpx, qapy, qx, qy);
+		</code>
+		<code>
+			<p>渐变</p>
+			<label>线性渐变</label>
+			<br>
+			var lg = context.createLinearGradient(xStart, yStart, xEnd, yEnd);
+			<br>
+			lg.addColorStop(offset, color);
+			<br> 
+			// offset: 设置颜色离渐变结束点的偏移量（0~1）
+			<br>
+			<label>径向渐变</label>
+			<br>
+			var rg = content.createRadialGrandient(xStart, yStart, radiusStart, xEnd, yEnd, radiusEnd);
+			<br>
+			// xStart, yStart,: 发散开始圆心； xEnd, yEnd： 发散结束圆心; radiusStart, radiusEnd: 发散开始半径, 发散结束半径
+			<br>
+			rg.addColorStrop(offset, color);
+		</code>
+		<code>
+			<p>绘制文本</p>
+			context.fillText(text, x, y);
+			<br>
+			content.strokeText(text, x, y);
+		</code>
+		<code>
+			<p>图形变形</p>
+			<label>平移</label>
+			<br>
+			context.translate(x, y);
+			<br>
+			// x, y：平移的距离
+			<br>
+			<label>缩放</label>
+			<br>
+			context.scale(x, y);
+			<br>
+			<label>旋转</label>
+			<br>
+			context.rotate(angle)
+			<br>
+		</code>
+		<code>
+			<p>矩阵变换</p>
+			context.transform(m11, m12, m21, m22, dx, dy)
+		</code>
+	</li>
+</ul>
+<div style="width: 700px;height: 700px; margin: 10px auto;">
+	<canvas id="canvas1" width="700" height="700" style="border: 1px solid #ddd;">
+	</canvas>
+</div>
+</body>
+
+<script>
+	var oCanvas = document.getElementById("canvas1");
+
+	var context = oCanvas.getContext('2d');
+	context.save();
+
+	context.fillStyle = '#f2309f'; // 填充的样式
+	context.strokeStyle = '#f29'; // 边框的样式
+	context.lineWidth = '2px'; // 边框的宽度
+
+	context.fillRect(10, 10, 50, 50);
+	context.strokeRect(8, 8, 54, 54);
+
+	context.clearRect(12, 12, 46, 46);
+
+	context.beginPath();
+	context.arc(35, 35, 21, 0, Math.PI * 2, true);
+	context.closePath();
+
+	context.strokeStyle = '#f08';
+	context.stroke();
+
+	context.beginPath();
+	context.moveTo(12,12);
+	context.lineTo(58,58);
+	context.closePath();
+	context.stroke();
+
+	context.beginPath();
+	context.moveTo(12,58);
+	context.lineTo(58,12);
+	context.closePath();
+	context.stroke();
+
+	// 线性渐变 start
+	var lg = context.createLinearGradient(14, 14, 42, 42);
+	lg.addColorStop(0, "rgba(255, 0, 0, 0.3)");
+	lg.addColorStop(0.3, "rgba(0, 255, 0, 0.3)");
+	lg.addColorStop(1, "rgba(0, 0, 255, 0.3)");
+
+	context.fillStyle = lg;
+	context.fillRect(14, 14, 42, 42);
+	// 线性渐变 end
+
+	context.clearRect(20, 20, 30, 30);
+
+	// 径向渐变 start
+	context.beginPath();
+	context.arc(35, 35, 15, 0, Math.PI * 2, true);
+	var rg = context.createRadialGradient(35, 35, 0, 35, 35, 15);
+	rg.addColorStop(0, "rgba(255, 0, 0, 0.3)");
+	rg.addColorStop(0.3, "rgba(0, 255, 0, 0.3)");
+	rg.addColorStop(1, "rgba(0, 0, 255, 0.3)");
+
+	context.fillStyle = rg;
+	context.closePath();
+	context.fill();
+	// 径向渐变 end
+
+	context.save();
+
+	// context.translate(100, 100);
+	// context.scale(5, 5);
+	// context.rotate(Math.PI / 4);
+	// context.fill();
+	// context.save();
+
+</script>

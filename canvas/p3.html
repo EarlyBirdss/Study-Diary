@@ -1,0 +1,46 @@
+<canvas id="canvas" width="300" height="300" style="border: 1px solid #333;">
+
+</canvas>
+<script>
+
+(function init() {
+	var canvas = document.getElementById("canvas");
+
+	if(!canvas || !canvas.getContext){
+		return;
+	}
+
+	var context = canvas.getContext("2d");
+
+	var oprtns = ["source-over", "destination-over", "source-in", "destination-in", "source-out", "destination-out", "source-atop", "destination-atop", "lighter", "xor", "copy"];
+
+	var i = -1;
+
+	function showResult(oprt){
+		console.log(oprt);
+		context.fillStyle = "#910";
+		context.fillRect(10, 10, 120, 120);
+
+		context.globalCompositeOperation = oprt;
+
+		context.fillStyle = "#019";
+		context.arc(130, 130, 70, 0, Math.PI * 2, true);
+		context.fill();
+	}
+
+	var timer = null;
+
+	function setTimer() {
+		timer = setTimeout(function(){
+
+			i >= oprtns.length -1 ? i = 0 : i++; 
+			showResult(oprtns[i]);
+			setTimer();
+
+		}, 1000);
+	}
+
+	setTimer();
+}());
+
+</script>
