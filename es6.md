@@ -105,7 +105,17 @@ https://babeljs.io/repl/  在线转码
 
 ### Symbol
 
-（研究了大半天终于发现意义在哪里，现在表示当前对象的属性有三种 obj.a、obj['a']、obj[a],一二种是ES5的字符串属性名，第三种是Symbol类型，这样就实现唯一的标识了）
+		var f = Symbol('foo');
+		
+		var a = {};
+		var b = {};
+		
+		a[f] = 'a[f]';
+		b.f = 'b.f';
+		
+		Object.assign(b, a);
+		
+		console.log(b[f], b.f); //'a[f]', 'b.f'
 
 * ES6引用一种新的原始数据类型Symbol表示独一无二的值
 * let s = Symbol();typeof s;//symbol **没有‘new’**
