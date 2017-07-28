@@ -1,0 +1,16 @@
+<view class="container">
+  <view class="song-sheet-list">
+    <view class="song-sheet-item" wx:for="{{ songsheets }}" wx:for-item="songsheet" wx:key="*this">
+    <view class="ss-image-box">
+      <image src="{{ songsheet.image }}" class="ss-image"></image>
+        <view class="ss-image-bar">
+          <text class="ss-user">{{ songsheet.userName }}</text>
+        </view>
+      </view>
+      <text class="ss-title-name">{{ songsheet.name }}</text>
+    </view>
+  </view>
+  <view class="bottom-nav">
+
+  </view>
+</view>
