@@ -1,0 +1,15 @@
+<view class="container">
+  <view class="top-banner">
+    <view class="tb-image-box">
+      <image src="{{ songsheet.image }}"></image>
+    </view>
+    <view class="tb-desc">
+      <text class="tb-tt-name">{{ songsheet.name }}</text>
+      <text class="tb-user-name">{{ songsheet.userName }}</text>
+    </view>
+    <view class="tb-btn-group">
+      
+    </view>
+    
+  </view>
+</view>

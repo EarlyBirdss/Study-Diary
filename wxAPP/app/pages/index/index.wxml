@@ -1,7 +1,7 @@
 <view class="container">
-  <view class="song-sheet-list">
-    <view class="song-sheet-item" wx:for="{{ songsheets }}" wx:for-item="songsheet" wx:key="*this">
-    <view class="ss-image-box">
+  <scroll-view class="song-sheet-list flex-wrp">
+    <view class="ss-item" wx:for="{{ songsheets }}" wx:for-item="songsheet" wx:key="*this">
+    <view class="flex-item ss-image-box" bindtap="linkToSongSheet" data-id="{{ songsheet.id }}">
       <image src="{{ songsheet.image }}" class="ss-image"></image>
         <view class="ss-image-bar">
           <text class="ss-user">{{ songsheet.userName }}</text>
@@ -9,8 +9,13 @@
       </view>
       <text class="ss-title-name">{{ songsheet.name }}</text>
     </view>
-  </view>
+  </scroll-view>
   <view class="bottom-nav">
-
+    <navigator url="../index/index" class="bn-itme">
+      发现音乐
+    </navigator>
+    <navigator url="../index/index" class="bn-itme">
+      我的音乐
+    </navigator>
   </view>
 </view>
